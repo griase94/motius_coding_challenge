@@ -42,7 +42,7 @@ The micro service uses Oauth2 for client authentication. Register a new client a
 ### Tracking endpoint
 ```/api/track/```
 
-Input data:
+**Request body:**
 ```json
 {
 "namespace": "this is namespace",
@@ -51,7 +51,6 @@ Input data:
 "value": 1
 } 
 ```
-**Request body:**
 - namespace: A namespace to group events under e.g. “Frontend”, “Back- end”, “Server-1” etc
 - name: The name of an event e.g. “availableMemory”, “pageView”, “subscribeButtonClick” etc
 - timestamp: A unix timestamp
@@ -76,7 +75,8 @@ group. Possible values are: “max”, “min”, “avg”. Default is "avg".
 A list of aggregated events in the format:
 ```json
 {
-    aggregatedTimestamp: <the lowest value of the granularity group>
-    value: <The aggregated value in this granularity group>
-}
+    "aggregatedTimestamp": "2020-11-12T11:10:00"
+    "value": 142.0
 ```
+- aggregatedTimestamp: the lowest timestamp of the granularity group
+- value: The aggregated value in this granularity group

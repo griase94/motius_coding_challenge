@@ -1,5 +1,9 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+
+from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
+
 from . import serializers
 from .models import Event
 from django.db.models.functions import Trunc
@@ -9,6 +13,8 @@ from datetime import datetime
 
 
 class Tracking(APIView):
+
+    permission_classes = [TokenHasReadWriteScope]
 
     def post(self, request):
         serializer = serializers.EventSerializer(data=request.data)
@@ -20,12 +26,17 @@ class Tracking(APIView):
 
 class Aggregation(APIView):
 
+    permission_classes = [TokenHasScope]
+    required_scopes = ['aggregation']
+
     def get(self, request, namespace, event_name):
         events = Event.objects.filter(name=event_name, namespace=namespace)
+
         granularity = request.query_params.get('granularity', 'none')
         aggregation_type = request.query_params.get('aggregationType', None)
         ts_min = request.query_params.get('tsMin', None)
         ts_max = request.query_params.get('tsMax', None)
+
         if ts_min is not None and ts_max is not None:
             events = events.filter(timestamp__gte=datetime.fromtimestamp(int(ts_min)),
                                    timestamp__lte=datetime.fromtimestamp(int(ts_max)))

@@ -52,23 +52,23 @@ The micro service uses Oauth2 for client authentication. Register a new client a
 "value": 1
 } 
 ```
-- namespace: A namespace to group events under e.g. “Frontend”, “Back- end”, “Server-1” (String)
-- name: The name of an event e.g. “availableMemory”, “pageView”, “subscribeButtonClick” (String
-- timestamp: Datetime
+- namespace: A namespace to group events under e.g. “Frontend”, “Back- end”, “Server-1” (string)
+- name: The name of an event e.g. “availableMemory”, “pageView”, “subscribeButtonClick” (string)
+- timestamp: Time of event (datetime)
 - value: A number that reflects some attribute of the event e.g. For a pageview this could be the amount in seconds the user spent on the page, for button clicks it could be just 1 (integer)
 
 ### Aggregation endpoint
 ```/api/events/<str:namespace>/<str:event_name>?tsMin=42&tsMax=69&granularity=month&aggregationType=avg```
 
 **Route parameters:**
-- namespace
-- EventName: The event whose data you want to fetch
+- namespace: The namespace from which events should be aggregated
+- event_name: The event whose data you want to fetch
 
 **Query parameters:**
 - tsMin: Start of the time window from which events will be selected (UNIX timestamp)
 - tsMax: End of the time window from which events will be selected (UNIX timestamp)
 - granularity: The granularity of aggregation. Possible value are: “minute”,
-“hour”, "day", “week”, “month”, “year”, “none”
+“hour”, "day", “week”, “month”, “year”, “none” (string)
 - aggregationType: The method of aggregating values in one granularity
 group. Possible values are: “max”, “min”, “avg”. Default is "avg".
 
@@ -80,7 +80,7 @@ A list of aggregated events in the format:
     "value": 142.0
 ```
 - aggregatedTimestamp: the lowest timestamp of the granularity group (datetime)
-- value: The aggregated value in this granularity group (nueric)
+- value: The aggregated value in this granularity group (numeric)
 
 ## Next steps
 #### Get ready for production:

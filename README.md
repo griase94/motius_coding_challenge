@@ -75,7 +75,7 @@ group. Possible values are: “max”, “min”, “avg”. Default is "avg".
 A list of aggregated events in the format:
 ```json
 {
-    "aggregatedTimestamp": "2020-11-12T11:10:00"
+    "aggregatedTimestamp": "2020-11-12T11:10:00",
     "value": 142.0
 ```
 - aggregatedTimestamp: the lowest timestamp of the granularity group

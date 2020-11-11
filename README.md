@@ -80,3 +80,18 @@ A list of aggregated events in the format:
 ```
 - aggregatedTimestamp: the lowest timestamp of the granularity group
 - value: The aggregated value in this granularity group
+
+## Next steps
+####Get ready for production:
+- Split into master/develop branch
+- Dockerize
+- Unit/Webtests (Newman)
+- Create .env file for Secrets, db config etc & read from it in code
+- Choose Provider (e.g. AWS) to host the database & run staging/production server
+- Build pipeline for automated testing, building & deployment with GitHub Actions (ideally)
+
+####Increase traffic:
+- Optimize DB connections
+- Find optimal VM configuration
+- Look into & possibly use things like a MessageQueue
+- Host multiple instances & use a load balancer, maybe shard data onto different databases and/or have different instances handle different regions/namespaces(probable needs middleware then to distribute)

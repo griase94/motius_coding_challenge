@@ -61,8 +61,8 @@ The micro service uses Oauth2 for client authentication. Register a new client a
 ```/api/events/<str:namespace>/<str:event_name>?tsMin=42&tsMax=69&granularity=month&aggregationType=avg```
 
 **Route parameters:**
-- namespace: The namespace from which events should be aggregated
-- event_name: The event whose data you want to fetch
+- namespace: The namespace from which events should be aggregated (string)
+- event_name: The event whose data you want to fetch (string)
 
 **Query parameters:**
 - tsMin: Start of the time window from which events will be selected (UNIX timestamp)
@@ -70,7 +70,7 @@ The micro service uses Oauth2 for client authentication. Register a new client a
 - granularity: The granularity of aggregation. Possible value are: “minute”,
 “hour”, "day", “week”, “month”, “year”, “none” (string)
 - aggregationType: The method of aggregating values in one granularity
-group. Possible values are: “max”, “min”, “avg”. Default is "avg".
+group. Possible values are: “max”, “min”, “avg”. Default is "avg". (string)
 
 **Return data:** \
 A list of aggregated events in the format:

@@ -28,8 +28,9 @@ We have an application, with multiple users, for which we want to set up event t
     ```bash 
     python3 manage.py runserver
     ```
+8. Configure Oauth2
 
-## Oauth2 configuration
+#### Oauth2 configuration
 The micro service uses Oauth2 for client authentication. Register a new client application as follows:
 
 1. Register a new application on http://127.0.0.1:8000/o/applications/register/ (```Client type``` -> Confidential & ```Authorization grant type``` -> Client credentials)
@@ -51,10 +52,10 @@ The micro service uses Oauth2 for client authentication. Register a new client a
 "value": 1
 } 
 ```
-- namespace: A namespace to group events under e.g. “Frontend”, “Back- end”, “Server-1” etc
-- name: The name of an event e.g. “availableMemory”, “pageView”, “subscribeButtonClick” etc
-- timestamp: A unix timestamp
-- value: A number that reflects some attribute of the event e.g. For a pageview this could be the amount in seconds the user spent on the page, for button clicks it could be just 1
+- namespace: A namespace to group events under e.g. “Frontend”, “Back- end”, “Server-1” (String)
+- name: The name of an event e.g. “availableMemory”, “pageView”, “subscribeButtonClick” (String
+- timestamp: Datetime
+- value: A number that reflects some attribute of the event e.g. For a pageview this could be the amount in seconds the user spent on the page, for button clicks it could be just 1 (integer)
 
 ### Aggregation endpoint
 ```/api/events/<str:namespace>/<str:event_name>?tsMin=42&tsMax=69&granularity=month&aggregationType=avg```
@@ -64,8 +65,8 @@ The micro service uses Oauth2 for client authentication. Register a new client a
 - EventName: The event whose data you want to fetch
 
 **Query parameters:**
-- tsMin: Start of the time window from which events will be selected
-- tsMax: End of the time window from which events will be selected
+- tsMin: Start of the time window from which events will be selected (UNIX timestamp)
+- tsMax: End of the time window from which events will be selected (UNIX timestamp)
 - granularity: The granularity of aggregation. Possible value are: “minute”,
 “hour”, "day", “week”, “month”, “year”, “none”
 - aggregationType: The method of aggregating values in one granularity
@@ -78,8 +79,8 @@ A list of aggregated events in the format:
     "aggregatedTimestamp": "2020-11-12T11:10:00",
     "value": 142.0
 ```
-- aggregatedTimestamp: the lowest timestamp of the granularity group
-- value: The aggregated value in this granularity group
+- aggregatedTimestamp: the lowest timestamp of the granularity group (datetime)
+- value: The aggregated value in this granularity group (nueric)
 
 ## Next steps
 #### Get ready for production:

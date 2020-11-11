@@ -51,20 +51,20 @@ Input data:
 "value": 1
 } 
 ```
-- Namespace: A namespace to group events under e.g. “Frontend”, “Back- end”, “Server-1” etc
-- EventName: The name of an event e.g. “availableMemory”, “pageView”, “subscribeButtonClick” etc
-- Timestamp: A unix timestamp
-- Value: A number that reflects some attribute of the event e.g. For page
-view this could be the amount in seconds the user spent on the page, for button clicks it could be just 1
+**Request body:**
+- namespace: A namespace to group events under e.g. “Frontend”, “Back- end”, “Server-1” etc
+- name: The name of an event e.g. “availableMemory”, “pageView”, “subscribeButtonClick” etc
+- timestamp: A unix timestamp
+- value: A number that reflects some attribute of the event e.g. For a pageview this could be the amount in seconds the user spent on the page, for button clicks it could be just 1
 
 ### Aggregation endpoint
 ```/api/events/<str:namespace>/<str:event_name>?tsMin=42&tsMax=69&granularity=month&aggregationType=avg```
 
-Route parameters:
+**Route parameters:**
 - namespace
 - EventName: The event whose data you want to fetch
 
-Query parameters:
+**Query parameters:**
 - tsMin: Start of the time window from which events will be selected
 - tsMax: End of the time window from which events will be selected
 - granularity: The granularity of aggregation. Possible value are: “minute”,
@@ -72,7 +72,8 @@ Query parameters:
 - aggregationType: The method of aggregating values in one granularity
 group. Possible values are: “max”, “min”, “avg”. Default is "avg".
 
-Return data: A list of aggregated events in the format:
+**Return data:** \
+A list of aggregated events in the format:
 ```json
 {
     aggregatedTimestamp: <the lowest value of the granularity group>

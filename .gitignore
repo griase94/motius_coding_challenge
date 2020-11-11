@@ -115,5 +115,21 @@ media/
 # !**/migrations
 # !**/migrations/__init__.py
 
-#id BEOkxnTVA1d1MbQRjYVE7EcXj9Z2BTnpaqic4RGS
-#secret x4IO2vYWG46thzZbWWD4gO1T4F3Rm4ZEzmMXMJx3ernalRxcfe4hgery8fOhkFDikZDqjE0y3kfShzYvuvM6rwGexqtlSqg5QJmcejDPDkf8IpXwSOGgkWJesYwjPv55
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries

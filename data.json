@@ -1,0 +1,102 @@
+[
+  {
+    "model":"api.event",
+    "pk":1,
+    "fields":{
+      "name": "cpu",
+      "namespace":"andy",
+      "timestamp":"2020-09-01T13:20:30",
+      "value":1
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":2,
+    "fields":{
+      "name": "cpu",
+      "namespace":"andy",
+      "timestamp":"2020-08-01T13:20:30",
+      "value":3
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":3,
+    "fields":{
+      "name": "cpu",
+      "namespace":"andy",
+      "timestamp":"2020-08-05T13:20:30",
+      "value":9
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":4,
+    "fields":{
+      "name": "gpu",
+      "namespace":"andy",
+      "timestamp":"2020-06-01T13:20:30",
+      "value":10
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":5,
+    "fields":{
+      "name": "cpu",
+      "namespace":"andy",
+      "timestamp":"2019-06-22T13:20:30",
+      "value":99
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":6,
+    "fields":{
+      "name": "cpu",
+      "namespace":"andy",
+      "timestamp":"2019-09-01T13:20:37",
+      "value":312
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":7,
+    "fields":{
+      "name": "fun",
+      "namespace":"motius",
+      "timestamp":"2020-11-12T10:00:37",
+      "value":10
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":8,
+    "fields":{
+      "name": "fun",
+      "namespace":"motius",
+      "timestamp":"2020-11-12T10:30:37",
+      "value":42
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":9,
+    "fields":{
+      "name": "fun",
+      "namespace":"motius",
+      "timestamp":"2020-11-12T11:00:37",
+      "value":9000
+    }
+  },
+  {
+    "model":"api.event",
+    "pk":10,
+    "fields":{
+      "name": "cpu",
+      "namespace":"andy",
+      "timestamp":"2020-06-01T13:20:30",
+      "value":10
+    }
+  }
+]

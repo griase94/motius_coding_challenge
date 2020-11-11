@@ -82,15 +82,16 @@ A list of aggregated events in the format:
 - value: The aggregated value in this granularity group
 
 ## Next steps
-####Get ready for production:
-- Split into master/develop branch
+#### Get ready for production:
+- Split into main/develop branch
+- Create .env & sample.env files for secrets, db config etc & read from it in code
+- Improve permissions & add environment_type flag (DEBUG/STAGING/PRODUCTION) to .env and make things like admin page etc. dependent on it
 - Dockerize
 - Unit/Webtests (Newman)
-- Create .env file for Secrets, db config etc & read from it in code
 - Choose Provider (e.g. AWS) to host the database & run staging/production server
 - Build pipeline for automated testing, building & deployment with GitHub Actions (ideally)
 
-####Increase traffic:
+#### Increase traffic:
 - Optimize DB connections
 - Find optimal VM configuration
 - Look into & possibly use things like a MessageQueue

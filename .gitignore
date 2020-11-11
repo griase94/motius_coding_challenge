@@ -115,6 +115,8 @@ media/
 # !**/migrations
 # !**/migrations/__init__.py
 
+.idea
+
 # User-specific stuff:
 .idea/workspace.xml
 .idea/tasks.xml

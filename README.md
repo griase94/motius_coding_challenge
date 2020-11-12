@@ -78,6 +78,7 @@ A list of aggregated events in the format:
 {
     "aggregatedTimestamp": "2020-11-12T11:10:00",
     "value": 142.0
+}
 ```
 - aggregatedTimestamp: the lowest timestamp of the granularity group (datetime)
 - value: The aggregated value in this granularity group (numeric)
